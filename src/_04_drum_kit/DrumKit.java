@@ -21,7 +21,7 @@ import javax.swing.JPanel;
 public class DrumKit implements MouseListener {
 
 	JLabel drumLabelWithImage;
-
+	JLabel cymbalLabelWithImage;
 	public void run() throws MalformedURLException {
 
 		// 1. Make a JFrame variable and initialize it using "new JFrame()"
@@ -40,12 +40,12 @@ public class DrumKit implements MouseListener {
 		a.add(b);
 		// 7. Download an image of a drum from the Internet. Drop it into your
 		// Eclipse project under "default package".
-		
+
 		// 8. Put the name of your image file in a String variable.
 		String drum = ("snare.jpg");
 		// 9. Edit the next line to use your String variable
 		drumLabelWithImage = createLabelImage(drum);
-		
+
 		// 10. Add the image to the panel
 		b.add(drumLabelWithImage);
 		// 11. Set the layout of the panel to "new GridLayout()"
@@ -55,15 +55,15 @@ public class DrumKit implements MouseListener {
 		a.pack();
 		// 13. add this mouse listener to drumLabelWithImage
 		drumLabelWithImage.addMouseListener(this);
+		// 18. AdPlaying soundd more images to make a drumkit. Remember to add this
+		// mouse
+		// listener to each one.
 		String cymbal = ("cymbal.jpg");
-		drumLabelWithImage = createLabelImage(cymbal);
-		b.add(drumLabelWithImage);
+		cymbalLabelWithImage = createLabelImage(cymbal);
+		b.add(cymbalLabelWithImage);
 		b.setLayout(new GridLayout());
 		a.pack();
-		drumLabelWithImage.addMouseListener(this);
-		// 18. AdPlaying soundd more images to make a drumkit. Remember to add this mouse
-		// listener to each one.
-		
+		cymbalLabelWithImage.addMouseListener(this);
 	}
 
 	public void mouseClicked(MouseEvent e) {
@@ -74,6 +74,12 @@ public class DrumKit implements MouseListener {
 														// that the mouse
 														// clicked on
 		playSound("drum.wav");
+
+		
+		JLabel cymbalClicked = (JLabel) e.getSource(); // This line gets the label
+														// that the mouse
+														// clicked on
+		playSound("cymbal.wav");
 		
 		// 15. Download a drum sound and drop it into your "default package".
 		// You can find it on freesound.org. To download it, log in as

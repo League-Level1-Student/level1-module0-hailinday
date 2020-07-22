@@ -32,9 +32,15 @@ public class box implements ActionListener {
 		System.out.print(a);
 		if (a==5) {
 			showPicture("jackInTheBox.png");
+			playSound("homer-woohoo.wav");
 		}
 	}
-	 private void showPicture(String fileName) {
+	 private void playSound(String string) {
+		// TODO Auto-generated method stub
+		System.out.print(string);
+	}
+
+	private void showPicture(String fileName) {
 	     try {
 	          JLabel imageLabel = createLabelImage(fileName);
 	          JFrame frame = new JFrame();
